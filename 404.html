@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Anas Fayed</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#050505">
+  <style>
+    /* Self-contained on purpose: a 404 page can be served from any path, so relative files would break. */
+    html,body{height:100%;margin:0;background:#050505;color:#f5f5f5;font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{min-height:100%;display:grid;place-content:center;justify-items:start;gap:14px;padding:24px;max-width:620px;margin:auto}
+    .code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#e8607a;font-size:.85rem;letter-spacing:.1em}
+    h1{margin:0;font-size:clamp(2.4rem,9vw,4.4rem);letter-spacing:-.04em;line-height:1}
+    p{margin:0;color:#a1a1aa}
+    a{display:inline-flex;align-items:center;min-height:48px;margin-top:10px;padding:12px 24px;border-radius:999px;background:#8b1a32;color:#fff;font-weight:600;text-decoration:none}
+    a:focus-visible{outline:2px solid #e8607a;outline-offset:3px}
+  </style>
+</head>
+<body>
+  <main>
+    <span class="code">ERROR 404</span>
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be broken or the page may have moved.</p>
+    <a id="home" href="/">Back to the homepage</a>
+  </main>
+  <script>
+    // On a GitHub Pages project site the home page lives under /repository-name/.
+    (function () {
+      var host = location.hostname, seg = location.pathname.split("/")[1];
+      var base = (/\.github\.io$/i.test(host) && seg) ? "/" + seg + "/" : "/";
+      document.getElementById("home").setAttribute("href", base);
+    })();
+  </script>
+</body>
+</html>
